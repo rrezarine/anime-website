@@ -4,10 +4,10 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     event.preventDefault();
 
     // Marrim elementet e fushave
-    const username = document.getElementById("username");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
     // Marrim elementet e gabimeve
     const usernameError = document.getElementById("usernameError");
@@ -61,6 +61,9 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         localStorage.setItem("username", username.value.trim());
         localStorage.setItem("email", email.value.trim());
         localStorage.setItem("password", password.value.trim());
+
+        alert("Registration successful!");
+        window.location.href = "login.html"; 
 
      // Redirektimi te homepage
          window.location.href = "index.html";
