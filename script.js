@@ -60,7 +60,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         // Ruajtje në localStorage (opsionale)
         localStorage.setItem("username", username.value.trim());
         localStorage.setItem("email", email.value.trim());
-        localStorage.setItem("password", password);
+        localStorage.setItem("password", password.value.trim());
 
      // Redirektimi te homepage
          window.location.href = "index.html";
