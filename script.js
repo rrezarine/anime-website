@@ -70,8 +70,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
 
 /* Login Form */
 document.getElementById("loginForm").addEventListener("submit", function(event) {
-    // Parandalojmë rifreskimin e faqes
-    event.preventDefault();
+    event.preventDefault(); // Parandalon rifreskimin e faqes
 
     // Marrim të dhënat nga inputet
     const loginUsername = document.getElementById("loginUsername").value.trim();
@@ -79,13 +78,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // Marrim të dhënat e regjistruara nga localStorage
     const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password"); // Mund të jetë e ruajtur gjatë regjistrimit
+    const storedPassword = localStorage.getItem("password");
 
     // Debugging: Shfaq vlerat në console
-     console.log("Stored Username:", storedUsername);
-     console.log("Stored Password:", storedPassword);
-     console.log("Entered Username:", loginUsername);
-     console.log("Entered Password:", loginPassword); 
+    console.log("Stored Username:", storedUsername);
+    console.log("Stored Password:", storedPassword);
+    console.log("Entered Username:", loginUsername);
+    console.log("Entered Password:", loginPassword);
 
     // Kontrollojmë nëse të dhënat e login-it përputhen me ato të regjistruara
     if (loginUsername === storedUsername && loginPassword === storedPassword) {
@@ -95,4 +94,5 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         alert("Incorrect username or password.");
     }
 });
+
 
