@@ -1,3 +1,4 @@
+/* Register Form */
 document.getElementById("registerForm").addEventListener("submit", function(event) {
     // Parandalojmë dërgimin e formës nëse ka gabime
     event.preventDefault();
@@ -64,3 +65,27 @@ document.getElementById("registerForm").addEventListener("submit", function(even
          window.location.href = "index.html";
     }
 });
+
+
+/* Login Form */
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    // Parandalojmë rifreskimin e faqes
+    event.preventDefault();
+
+    // Marrim të dhënat nga inputet
+    const loginUsername = document.getElementById("loginUsername").value.trim();
+    const loginPassword = document.getElementById("loginPassword").value.trim();
+
+    // Marrim të dhënat e regjistruara nga localStorage
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password"); // Mund të jetë e ruajtur gjatë regjistrimit
+
+    // Kontrollojmë nëse të dhënat e login-it përputhen me ato të regjistruara
+    if (loginUsername === storedUsername && loginPassword === storedPassword) {
+        alert("Login successful!");
+        window.location.href = "index.html"; // Redirekto te faqja kryesore
+    } else {
+        alert("Incorrect username or password.");
+    }
+});
+
