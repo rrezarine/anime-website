@@ -4,10 +4,10 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     event.preventDefault();
 
     // Marrim elementet e fushave
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
 
     // Marrim elementet e gabimeve
     const usernameError = document.getElementById("usernameError");
@@ -62,9 +62,6 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         localStorage.setItem("email", email.value.trim());
         localStorage.setItem("password", password.value.trim());
 
-        alert("Registration successful!");
-        window.location.href = "login.html"; 
-
      // Redirektimi te homepage
          window.location.href = "index.html";
     }
@@ -73,7 +70,8 @@ document.getElementById("registerForm").addEventListener("submit", function(even
 
 /* Login Form */
 document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Parandalon rifreskimin e faqes
+    // Parandalojmë rifreskimin e faqes
+    event.preventDefault();
 
     // Marrim të dhënat nga inputet
     const loginUsername = document.getElementById("loginUsername").value.trim();
@@ -81,13 +79,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // Marrim të dhënat e regjistruara nga localStorage
     const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
+    const storedPassword = localStorage.getItem("password"); // Mund të jetë e ruajtur gjatë regjistrimit
 
     // Debugging: Shfaq vlerat në console
-    console.log("Stored Username:", storedUsername);
-    console.log("Stored Password:", storedPassword);
-    console.log("Entered Username:", loginUsername);
-    console.log("Entered Password:", loginPassword);
+     console.log("Stored Username:", storedUsername);
+     console.log("Stored Password:", storedPassword);
+     console.log("Entered Username:", loginUsername);
+     console.log("Entered Password:", loginPassword); 
 
     // Kontrollojmë nëse të dhënat e login-it përputhen me ato të regjistruara
     if (loginUsername === storedUsername && loginPassword === storedPassword) {
@@ -97,5 +95,4 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         alert("Incorrect username or password.");
     }
 });
-
 
