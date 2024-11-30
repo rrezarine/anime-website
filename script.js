@@ -80,6 +80,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     // Marrim të dhënat e regjistruara nga localStorage
     const storedUsername = localStorage.getItem("username");
     const storedPassword = localStorage.getItem("password"); // Mund të jetë e ruajtur gjatë regjistrimit
+    console.log("Stored Password (from localStorage):", storedPassword);
 
     // Debugging: Shfaq vlerat në console
      console.log("Stored Username:", storedUsername);
