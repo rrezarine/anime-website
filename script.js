@@ -81,6 +81,12 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const storedUsername = localStorage.getItem("username");
     const storedPassword = localStorage.getItem("password"); // Mund të jetë e ruajtur gjatë regjistrimit
 
+    // Debugging: Shfaq vlerat në console
+     console.log("Stored Username:", storedUsername);
+     console.log("Stored Password:", storedPassword);
+     console.log("Entered Username:", loginUsername);
+     console.log("Entered Password:", loginPassword); 
+
     // Kontrollojmë nëse të dhënat e login-it përputhen me ato të regjistruara
     if (loginUsername === storedUsername && loginPassword === storedPassword) {
         alert("Login successful!");
