@@ -69,6 +69,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
 
 
 /* Login Form */
+document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     // Parandalojmë rifreskimin e faqes
     event.preventDefault();
@@ -96,4 +97,4 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         alert("Incorrect username or password.");
     }
 });
-
+}
